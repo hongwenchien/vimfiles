@@ -1,0 +1,4 @@
+#!/bin/bash
+
+ln -sf ~/vimfiles.git/vimrc ~/.vimrc
+ln -sf ~/vimfiles.git/tmux.conf ~/.tmux.conf
