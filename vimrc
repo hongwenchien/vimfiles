@@ -63,6 +63,7 @@ if has('gui_running')
 	colorscheme jellybeans
 	set guioptions =
 else
+	" :highlight (to list all highlight colors)
 	" help hi for more detail
 	hi Search term=reverse ctermfg=0
 	hi Search cterm=underline ctermbg=236 ctermfg=13
@@ -80,6 +81,8 @@ else
 	hi PreProc ctermfg=darkblue
 	hi Function ctermfg=yellow
 	hi Type ctermfg=cyan
+	hi MatchParen term=reverse ctermbg=DarkGrey
+	hi CursorLine term=underline cterm=bold ctermbg=236 guibg=Grey40
 endif
 
 " Cscope
