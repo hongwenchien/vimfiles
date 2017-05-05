@@ -25,6 +25,8 @@ Plugin 'rhysd/vim-clang-format'
 
 call vundle#end()
 
+set viminfo=
+
 " Print full path
 command -nargs=0 F :echo expand('%:p')
 
@@ -41,6 +43,9 @@ let g:clang_format#style_options = {"IndentWidth": 2, "TabWidth": 2, "UseTab": "
 	\ "AllowShortFunctionsOnASingleLine": "false", "AlignConsecutiveAssignments": "true", "AlignConsecutiveDeclarations": "true" }
 
 " VIM options
+set encoding=utf-8
+set history=200
+set bs=2
 set autoindent
 set hlsearch
 set cursorline
@@ -55,9 +60,6 @@ set background=dark
 set ignorecase
 set t_Co=256
 syntax on
-
-" Cscope
-set nocscopeverbose
 
 if has('gui_running')
 	colorscheme jellybeans
@@ -86,21 +88,15 @@ else
 endif
 
 " Cscope
-" s: Find this C symbol
+set nocscopeverbose
+let g:cscope_silent = 1
 nnoremap  <leader>fs :call CscopeFind('s', expand('<cword>'))<CR>
-" g: Find this definition
 nnoremap  <leader>fg :call CscopeFind('g', expand('<cword>'))<CR>
-" d: Find functions called by this function
 nnoremap  <leader>fd :call CscopeFind('d', expand('<cword>'))<CR>
-" c: Find functions calling this function
 nnoremap  <leader>fc :call CscopeFind('c', expand('<cword>'))<CR>
-" t: Find this text string
 nnoremap  <leader>ft :call CscopeFind('t', expand('<cword>'))<CR>
-" e: Find this egrep pattern
 nnoremap  <leader>fe :call CscopeFind('e', expand('<cword>'))<CR>
-" f: Find this file
 nnoremap  <leader>ff :call CscopeFind('f', expand('<cword>'))<CR>
-" i: Find files #including this file
 nnoremap  <leader>fi :call CscopeFind('i', expand('<cword>'))<CR>
 
 " Key definition
@@ -124,4 +120,5 @@ set noswapfile
 
 " Ag, the silver searcher
 map <C-\> :execute "Ag " . expand("<cword>") <CR>
+nnoremap  <leader>ag :execute "LAg " . expand("<cword>") <CR>
 

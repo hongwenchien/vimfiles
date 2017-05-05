@@ -2,3 +2,5 @@
 
 ln -sf ~/vimfiles.git/vimrc ~/.vimrc
 ln -sf ~/vimfiles.git/tmux.conf ~/.tmux.conf
+ln -sf ~/vimfiles.git/myenv.sh ~/bin/myenv.sh
+ln -sf ~/vimfiles.git/myfunc.sh ~/bin/myfunc.sh
