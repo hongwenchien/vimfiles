@@ -15,6 +15,8 @@ alias p='tsocks'
 alias listdb='for f in `find ${HOME}/.cscope.vim/*.dir`; do echo -n $(basename $f)  :; cat $f; done'
 alias vi='vim'
 
+PS1="\[\033[38;5;74m\]\u@\h\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;250m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]\n\\$ \[$(tput sgr0)\]"
+
 # Map menu key to mouse middle key
 #xkbset m
 #xmodmap -e "keycode 135 = Pointer_Button2"
