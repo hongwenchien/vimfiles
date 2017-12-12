@@ -1,3 +1,4 @@
+"source $VIMRUNTIME/defaults.vim
 set nocompatible
 filetype off
 
@@ -22,6 +23,7 @@ Plugin 'guns/xterm-color-table.vim'
 Plugin 'rking/ag.vim'
 Plugin 'simplyzhao/cscope_maps.vim'
 Plugin 'rhysd/vim-clang-format'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 
@@ -46,11 +48,10 @@ let g:clang_format#style_options = {"IndentWidth": 2, "TabWidth": 2, "UseTab": "
 set encoding=utf-8
 set history=200
 set bs=2
+set wildmenu
 set autoindent
 set hlsearch
 set cursorline
-set ts=8
-set shiftwidth=8
 set incsearch
 set nu
 set showcmd
@@ -59,7 +60,14 @@ set laststatus=2
 set background=dark
 set ignorecase
 set t_Co=256
+" set list
+set listchars=tab:>-
 syntax on
+
+" Coding style
+set ts=4
+set shiftwidth=4
+set et
 
 if has('gui_running')
 	colorscheme jellybeans
@@ -82,10 +90,19 @@ else
 	hi Identifier ctermfg=magenta
 	hi PreProc ctermfg=darkblue
 	hi Function ctermfg=yellow
-	hi Type ctermfg=cyan
+	hi Type ctermfg=215
 	hi MatchParen term=reverse ctermbg=DarkGrey
 	hi CursorLine term=underline cterm=bold ctermbg=236 guibg=Grey40
+    hi SpecialKey ctermfg=239
+    hi QuickFixLine ctermbg=DarkGrey
+    hi cFormat ctermfg=147
 endif
+
+" YCM
+let g:ycm_autoclose_preview_window_after_insertion = 1
+"let g:ycm_confirm_extra_conf = 0
+let g:ycm_show_diagnostics_ui = 1
+let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 
 " Cscope
 set nocscopeverbose
@@ -96,8 +113,9 @@ nnoremap  <leader>fd :call CscopeFind('d', expand('<cword>'))<CR>
 nnoremap  <leader>fc :call CscopeFind('c', expand('<cword>'))<CR>
 nnoremap  <leader>ft :call CscopeFind('t', expand('<cword>'))<CR>
 nnoremap  <leader>fe :call CscopeFind('e', expand('<cword>'))<CR>
-nnoremap  <leader>ff :call CscopeFind('f', expand('<cword>'))<CR>
+nnoremap  <leader>ff :call CscopeFind('f', expand('<cword>')); lw<CR>
 nnoremap  <leader>fi :call CscopeFind('i', expand('<cword>'))<CR>
+nnoremap  <leader>q : lcl <CR>
 
 " Key definition
 map <f2> :%s/\s\+$//g<CR>
