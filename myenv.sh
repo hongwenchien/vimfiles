@@ -14,6 +14,7 @@ alias gvimr='gvim --remote-tab'
 alias p='tsocks'
 alias listdb='for f in `find ${HOME}/.cscope.vim/*.dir`; do echo -n $(basename $f)  :; cat $f; done'
 alias vi='vim'
+alias pcc='picocom -b 921600 /dev/ttyUSB0'
 
 PS1="\[\033[38;5;74m\]\u@\h\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;250m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]\n\\$ \[$(tput sgr0)\]"
 
@@ -52,5 +53,5 @@ PERL_MM_OPT="INSTALL_BASE=/home/hungwen/perl5"; export PERL_MM_OPT;
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
-source $HOME/bin/clear_evals.sh
+#source $HOME/bin/clear_evals.sh
 source $HOME/bin/myfunc.sh

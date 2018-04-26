@@ -23,7 +23,7 @@ Plugin 'guns/xterm-color-table.vim'
 Plugin 'rking/ag.vim'
 Plugin 'simplyzhao/cscope_maps.vim'
 Plugin 'rhysd/vim-clang-format'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 
@@ -65,9 +65,12 @@ set listchars=tab:>-
 syntax on
 
 " Coding style
-set ts=4
-set shiftwidth=4
-set et
+"set ts=4
+"set shiftwidth=4
+"set et
+set ts=8
+set shiftwidth=8
+set noet
 
 if has('gui_running')
 	colorscheme jellybeans
@@ -93,9 +96,14 @@ else
 	hi Type ctermfg=215
 	hi MatchParen term=reverse ctermbg=DarkGrey
 	hi CursorLine term=underline cterm=bold ctermbg=236 guibg=Grey40
-    hi SpecialKey ctermfg=239
-    hi QuickFixLine ctermbg=DarkGrey
-    hi cFormat ctermfg=147
+	hi SpecialKey ctermfg=239
+	hi QuickFixLine ctermbg=DarkGrey
+	hi cFormat ctermfg=147
+	hi DiffDelete term=bold ctermfg=24 ctermbg=24 gui=bold guifg=Blue guibg=DarkCyan
+	hi DiffAdd term=bold ctermfg=123 ctermbg=24 guibg=DarkBlue
+	hi DiffText term=bold cterm=bold ctermfg=white ctermbg=172 gui=bold guibg=Red
+	hi DiffChange term=bold ctermbg=137 guibg=DarkMagenta
+	hi Folded term=standout ctermfg=195 ctermbg=237 guifg=Cyan guibg=DarkGrey
 endif
 
 " YCM
