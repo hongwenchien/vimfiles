@@ -18,7 +18,6 @@ go2atf()
 	fi
 }
 
-
 sfind()
 {
 	for d in $@
@@ -26,4 +25,17 @@ sfind()
 		local search_dir=$PWD/$d
 		find -L $search_dir -name "*.[chS]" -o -name "*.cc" -o -name "*.cpp" -o -name "*.aidl" -o -name "*.java" -o -name "*.xml" -o -name "*.mk" -o -name "*.sh" -o -name "Make*" -o -name "*.ld*"
 	done
+}
+
+sfind_kernel()
+{
+	sfind arch/arm64/
+	sfind init/
+	sfind kernel/
+	sfind include
+	sfind mm/
+	sfind drivers/of/
+	sfind drivers/clocksource/
+	sfind drivers/irqchip/
+	sfind drivers/virtio/
 }

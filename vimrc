@@ -32,6 +32,10 @@ set viminfo=
 " Print full path
 command -nargs=0 F :echo expand('%:p')
 
+" Switching Coding style command
+command StyleFuchsia :set ts=4 | set sw=4 | set et
+command StyleLinux :set ts=8 | set sw=8 | set noet
+
 let g:NERDTreeWinPos = "right"
 let g:tagbar_left = 1
 let mapleader = ","
@@ -123,7 +127,7 @@ nnoremap  <leader>ft :call CscopeFind('t', expand('<cword>'))<CR>
 nnoremap  <leader>fe :call CscopeFind('e', expand('<cword>'))<CR>
 nnoremap  <leader>ff :call CscopeFind('f', expand('<cword>')); lw<CR>
 nnoremap  <leader>fi :call CscopeFind('i', expand('<cword>'))<CR>
-nnoremap  <leader>q : lcl <CR>
+nnoremap  <leader>q : ccl \| lcl <CR>
 
 " Key definition
 map <f2> :%s/\s\+$//g<CR>
