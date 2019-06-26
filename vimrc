@@ -7,7 +7,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'nanotech/jellybeans.vim'
-Plugin 'vim-scripts/md5.vim'
+"Plugin 'vim-scripts/md5.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'jeaye/color_coded'

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ln -sf ~/vimfiles.git/vimrc ~/.vimrc
-ln -sf ~/vimfiles.git/tmux.conf ~/.tmux.conf
-ln -sf ~/vimfiles.git/myenv.sh ~/bin/myenv.sh
-ln -sf ~/vimfiles.git/myfunc.sh ~/bin/myfunc.sh
+ln -sf $PWD/vimrc ~/.vimrc
+ln -sf $PWD/tmux.conf ~/.tmux.conf.local.user
+ln -sf $PWD/myenv.sh ~/bin/myenv.sh
+ln -sf $PWD/myfunc.sh ~/bin/myfunc.sh
