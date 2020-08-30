@@ -17,6 +17,7 @@ sfind_kernel()
 {
 	sfind arch/arm64/
 	sfind init/
+	sfind lib/
 	sfind kernel/
 	sfind include
 	sfind mm/
@@ -25,10 +26,11 @@ sfind_kernel()
 	sfind drivers/irqchip/
 	sfind drivers/virtio/
 	sfind drivers/base/
-	sfind drivers/trusty
-	if [[ -d drivers/misc/mediatek/nebula ]]; then
-		sfind drivers/misc/mediatek/nebula
-	fi
+	sfind drivers/nebula
+	sfind drivers/cpuidle
+
+	sfind drivers/misc/mediatek/nebula
+	sfind drivers/misc/mediatek/base/power
 }
 
 function create-kernel-db()
@@ -42,6 +44,22 @@ function create-kernel-db()
 
 	echo "Createing ${files_path}"
 	sfind_kernel > ${files_path}
+
+	echo "Createing ${db_path}"
+	cscope -k -q -b -i ${files_path} -f${db_path}
+}
+
+function create-db()
+{
+	local hash=`echo -n $PWD | sha256sum | cut -d' ' -f1`
+	local base_path="${HOME}/.cscope.vim/${hash}"
+	local files_path="${base_path}.files"
+	local db_path="${base_path}.db"
+
+	echo "sha256(curdir) = ${hash}"
+
+	echo "Createing ${files_path}"
+	sfind . > ${files_path}
 
 	echo "Createing ${db_path}"
 	cscope -k -q -b -i ${files_path} -f${db_path}

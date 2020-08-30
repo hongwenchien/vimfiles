@@ -10,7 +10,7 @@ Plugin 'nanotech/jellybeans.vim'
 "Plugin 'vim-scripts/md5.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
-Plugin 'jeaye/color_coded'
+"Plugin 'jeaye/color_coded'
 Plugin 'yegappan/mru'
 "Plugin 'brookhong/cscope.vim'
 Plugin 'hungwenchien/cscope.vim'
@@ -24,6 +24,11 @@ Plugin 'rking/ag.vim'
 Plugin 'simplyzhao/cscope_maps.vim'
 Plugin 'rhysd/vim-clang-format'
 "Plugin 'Valloric/YouCompleteMe'
+"Plugin 'zxqfl/tabnine-vim'
+Plugin 'vim-scripts/highlight.vim'
+Plugin 'finbarrocallaghan/highlights.vim'
+Plugin 'vim-scripts/desert-warm-256'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 
 call vundle#end()
 
@@ -33,7 +38,7 @@ set viminfo=
 command -nargs=0 F :echo expand('%:p')
 
 " Switching Coding style command
-command StyleFuchsia :set ts=4 | set sw=4 | set et
+command StyleFuchsia :set ts=2 | set sw=2 | set et
 command StyleLinux :set ts=8 | set sw=8 | set noet
 
 let g:NERDTreeWinPos = "right"
@@ -76,6 +81,11 @@ set ts=8
 set shiftwidth=8
 set noet
 
+"set termguicolors
+
+"colorscheme desert-warm-256
+"colorscheme jellybeans
+
 if has('gui_running')
 	colorscheme jellybeans
 	set guioptions =
@@ -84,8 +94,8 @@ else
 	" help hi for more detail
 	hi Search term=reverse ctermfg=0
 	hi Search cterm=underline ctermbg=236 ctermfg=13
-	hi LineNr ctermfg=245
-	hi CursorLineNr ctermfg=255
+	hi LineNr ctermfg=245 guifg=Grey60
+	hi CursorLineNr ctermfg=255 guifg=Grey100
 	"hi Visual ctermfg=255 ctermbg=240
 	hi Visual ctermbg=239
 	hi TabLineFill ctermfg=black
@@ -99,7 +109,7 @@ else
 	hi Function ctermfg=yellow
 	hi Type ctermfg=215
 	hi MatchParen term=reverse ctermbg=DarkGrey
-	hi CursorLine term=underline cterm=bold ctermbg=236 guibg=Grey40
+	hi CursorLine term=underline cterm=bold ctermbg=236 guibg=Grey25
 	hi SpecialKey ctermfg=239
 	hi QuickFixLine ctermbg=DarkGrey
 	hi cFormat ctermfg=147
@@ -111,10 +121,10 @@ else
 endif
 
 " YCM
-let g:ycm_autoclose_preview_window_after_insertion = 1
+"let g:ycm_autoclose_preview_window_after_insertion = 1
 "let g:ycm_confirm_extra_conf = 0
-let g:ycm_show_diagnostics_ui = 1
-let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+"let g:ycm_show_diagnostics_ui = 1
+"let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 
 " Cscope
 set nocscopeverbose
