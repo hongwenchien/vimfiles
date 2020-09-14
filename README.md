@@ -1,12 +1,18 @@
-### Instructions
+### Install
 
 ```
-git clone https://github.com/hungwenchien/vimfiles.git ~/vimfiles.git
+git clone https://github.com/hungwenchien/ubuntu-env.git
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-cd ~/vimfiles.git
+
+### Setup
+
+cd ubuntu-env
 ./link
 ```
+
+
+### Install plugins for VIM
 
 Launch vim and run below command to install plugins
 ```
