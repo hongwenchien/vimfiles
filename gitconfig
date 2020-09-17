@@ -1,0 +1,20 @@
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[diff]
+	tool = meld
+[difftool "bc4"]
+	trustExitCode = true
+	cmd = /usr/bin/bcompare $LOCAL $REMOTE
+[difftool]
+	prompt = false
+[merge]
+	tool = bc4
+[mergetool "bc4"]
+	cmd = /usr/bin/bcompare $LOCAL $REMOTE $BASE $MERGED
+[color]
+	ui = auto
+[core]
+	excludesfile = ~/.gitignore
+[user]
+	email = hongwen.jian@gmail.com
+	name = Hungwen Chien
