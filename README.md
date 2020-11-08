@@ -18,3 +18,8 @@ Launch vim and run below command to install plugins
 ```
 :PluginInstall
 ```
+
+
+### Powerline Fonts
+
+https://github.com/powerline/fonts

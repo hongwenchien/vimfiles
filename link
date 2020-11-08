@@ -1,5 +1,6 @@
 #!/bin/bash
 
+mkdir -p ~/bin
 ln -sf $PWD/vimrc ~/.vimrc
 ln -sf $PWD/tmux.conf ~/.tmux.conf
 ln -sf $PWD/tmux.conf.local ~/.tmux.conf.local
