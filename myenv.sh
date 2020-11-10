@@ -24,6 +24,7 @@ alias adbr='adb reboot'
 alias adbs='adb shell sync'
 alias adbw='adb wait-for-device'
 # cscope
+alias pwdsha='echo -n $PWD | sha256sum'
 alias listdb='for f in `find ${HOME}/.cscope.vim/*.dir`; do echo -n $(basename $f)  :; cat $f; done'
 
 alias kmsg='while true; do adb wait-for-device; adb root; adb shell dmesg -w; sleep 0.2s; done'
