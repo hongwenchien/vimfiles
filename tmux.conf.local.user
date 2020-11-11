@@ -40,6 +40,9 @@ bind-key -n M-k select-pane -U
 bind-key -n M-j select-pane -D
 bind-key -n M-= resize-pane -Z
 
+# clipboard
+bind-key -Tcopy-mode-vi enter send -X copy-pipe-and-cancel "xclip -i -sel c"
+
 # misc
 #bind-key -n F5 setw synchronize-panes on
 #bind-key -n F6 setw synchronize-panes off
