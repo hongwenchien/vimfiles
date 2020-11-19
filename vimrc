@@ -158,6 +158,9 @@ set noswapfile
 " set directory=~/.vim/swp//
 " set backupdir=~/.vim/backup//
 
+" support mouse_sgr
+set ttymouse=sgr
+
 " Ag, the silver searcher
 map <C-\> :execute "Ag " . expand("<cword>") <CR>
 nnoremap  <leader>ag :execute "LAg " . expand("<cword>") <CR>
