@@ -160,6 +160,7 @@ set noswapfile
 
 " support mouse_sgr
 set ttymouse=sgr
+set mouse=a
 
 " Ag, the silver searcher
 map <C-\> :execute "Ag " . expand("<cword>") <CR>

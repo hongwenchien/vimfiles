@@ -4,7 +4,7 @@ set -sg escape-time 1
 set -g xterm-keys on
 set -g default-terminal "xterm-256color"
 set -g base-index 1
-set -g mouse on
+#set -g mouse on
 set -g set-clipboard off
 
 unbind-key C-b
@@ -41,7 +41,7 @@ bind-key -n M-j select-pane -D
 bind-key -n M-= resize-pane -Z
 
 # clipboard
-bind-key -Tcopy-mode-vi enter send -X copy-pipe-and-cancel "xclip -i -sel c"
+bind-key -T copy-mode-vi enter send-keys -X copy-pipe-and-cancel "xclip -se c -i"
 
 # misc
 #bind-key -n F5 setw synchronize-panes on
