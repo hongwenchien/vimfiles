@@ -11,6 +11,7 @@ alias qqqqq='cd ../../../../..'
 alias qqqqqq='cd ../../../../../..'
 alias qqqqqqq='cd ../../../../../../..'
 alias llnc='ls -l --color=none'
+alias ll='ls -alF --time-style=long-iso'
 # tmux
 alias sx='tmux attach'
 #alias tmux='TERM=xterm-256color tmux'
