@@ -7,12 +7,9 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'nanotech/jellybeans.vim'
-"Plugin 'vim-scripts/md5.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
-"Plugin 'jeaye/color_coded'
 Plugin 'yegappan/mru'
-"Plugin 'brookhong/cscope.vim'
 Plugin 'hungwenchien/cscope.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -23,10 +20,7 @@ Plugin 'guns/xterm-color-table.vim'
 Plugin 'rking/ag.vim'
 Plugin 'simplyzhao/cscope_maps.vim'
 Plugin 'rhysd/vim-clang-format'
-"Plugin 'Valloric/YouCompleteMe'
-"Plugin 'zxqfl/tabnine-vim'
 Plugin 'vim-scripts/highlight.vim'
-Plugin 'finbarrocallaghan/highlights.vim'
 Plugin 'vim-scripts/desert-warm-256'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 
@@ -40,6 +34,7 @@ command -nargs=0 F :echo expand('%:p')
 " Switching Coding style command
 command StyleFuchsia :set ts=2 | set sw=2 | set et
 command StyleLinux :set ts=8 | set sw=8 | set noet
+command StyleTrusty :set ts=4 | set sw=4 | set et
 
 let g:NERDTreeWinPos = "right"
 let g:tagbar_left = 1
@@ -98,6 +93,7 @@ else
 	hi CursorLineNr ctermfg=255 guifg=Grey100
 	"hi Visual ctermfg=255 ctermbg=240
 	hi Visual ctermbg=239
+	hi StatusLine ctermfg=grey
 	hi TabLineFill ctermfg=black
 	hi TabLine ctermfg=black ctermbg=gray
 	hi TabLineSel ctermfg=black ctermbg=white
@@ -109,7 +105,7 @@ else
 	hi Function ctermfg=yellow
 	hi Type ctermfg=215
 	hi MatchParen term=reverse ctermbg=DarkGrey
-	hi CursorLine term=underline cterm=bold ctermbg=236 guibg=Grey25
+	hi CursorLine term=underline cterm=bold ctermbg=238 guibg=Grey24
 	hi SpecialKey ctermfg=239
 	hi QuickFixLine ctermbg=DarkGrey
 	hi cFormat ctermfg=147
@@ -117,14 +113,8 @@ else
 	hi DiffAdd term=bold ctermfg=123 ctermbg=24 guibg=DarkBlue
 	hi DiffText term=bold cterm=bold ctermfg=white ctermbg=172 gui=bold guibg=Red
 	hi DiffChange term=bold ctermbg=137 guibg=DarkMagenta
-	hi Folded term=standout ctermfg=195 ctermbg=237 guifg=Cyan guibg=DarkGrey
+	hi Folded term=standout ctermfg=195 ctermbg=236 guifg=Cyan guibg=DarkGrey
 endif
-
-" YCM
-"let g:ycm_autoclose_preview_window_after_insertion = 1
-"let g:ycm_confirm_extra_conf = 0
-"let g:ycm_show_diagnostics_ui = 1
-"let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 
 " Cscope
 set nocscopeverbose
