@@ -35,7 +35,7 @@ sfind_kernel()
 
 function create-kernel-db()
 {
-	local hash=`echo -n $PWD | sha256sum | cut -d' ' -f1`
+	local hash=`echo -n $(pwd -P) | sha256sum | cut -d' ' -f1`
 	local base_path="${HOME}/.cscope.vim/${hash}"
 	local files_path="${base_path}.files"
 	local db_path="${base_path}.db"
@@ -51,7 +51,7 @@ function create-kernel-db()
 
 function create-db()
 {
-	local hash=`echo -n $PWD | sha256sum | cut -d' ' -f1`
+	local hash=`echo -n $(pwd -P) | sha256sum | cut -d' ' -f1`
 	local base_path="${HOME}/.cscope.vim/${hash}"
 	local files_path="${base_path}.files"
 	local db_path="${base_path}.db"
